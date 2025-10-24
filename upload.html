@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Bootstrap CSS (only if not already in base.html) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-5">
+    
+    {% if not file_uploaded %}
+    <!-- File Upload Section -->
+    <div class="card shadow-lg p-5 text-center" style="background: rgba(0,0,0,0.7); color: white;">
+        <h2 class="text-info mb-4">Upload Dataset for Diabetes Prediction</h2>
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="file" class="form-label">Choose a CSV file:</label>
+                <input type="file" name="file" id="file" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Upload</button>
+        </form>
+    </div>
+    {% endif %}
+
+    {% if file_uploaded %}
+    <!-- Dataset Preview -->
+    <div class="card shadow-lg p-4 mt-5" style="background: rgba(0,0,0,0.7); color: white;">
+        <h2 class="text-warning text-center">Dataset Preview</h2>
+        <div class="table-responsive mt-3">
+            <table class="table table-striped table-hover table-bordered bg-light text-dark">
+                <thead class="table-dark">
+                    <tr>
+                        {% for col in columns %}
+                        <th>{{ col }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data %}
+                    <tr>
+                        {% for cell in row %}
+                        <td>{{ cell }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="d-flex justify-content-center gap-3 mt-4">
+            <form action="{{ url_for('train') }}" method="get">
+                <button type="submit" class="btn btn-success btn-lg">Train Model</button>
+            </form>
+            <form action="/visualize" method="get">
+                <button type="submit" class="btn btn-info btn-lg">Visualize Data</button>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

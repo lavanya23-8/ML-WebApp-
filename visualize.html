@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-start min-vh-100" style="padding-top: 50px; padding-bottom: 50px;">
+    <div class="card shadow-lg p-5 text-center" style="max-width: 900px; width: 95%; color: white; border-radius: 15px; background: transparent;">
+        
+        <h2 class="text-info mb-4" style="font-size: 2.5rem;">Dataset Visualization</h2>
+
+        <!-- Scatter Plot -->
+        <div class="mb-5">
+            <h3 class="text-warning mb-3">Scatter Plot</h3>
+            {% if scatter_plot %}
+                <img src="{{ url_for('static', filename='images/scatter_plot.png') }}" 
+                     class="img-fluid rounded shadow" 
+                     style="max-width: 100%; height: auto;">
+            {% else %}
+                <p class="text-white">Scatter plot not available.</p>
+            {% endif %}
+        </div>
+
+        <!-- Additional Plots -->
+        <div class="mb-5">
+            <h3 class="text-warning mb-3">Additional Plots</h3>
+            {% if histogram_plot %}
+                <img src="{{ url_for('static', filename='images/histogram_plot.png') }}" 
+                     class="img-fluid rounded shadow mb-3" 
+                     style="max-width: 100%; height: auto;">
+            {% else %}
+                <p class="text-white">No additional plots available yet.</p>
+            {% endif %}
+        </div>
+        
+        <!-- Back button -->
+        <form action="{{ url_for('dashboard') }}">
+            <button type="submit" class="btn btn-info btn-lg px-5 py-3" style="border-radius: 10px;">
+                Back to Dashboard
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

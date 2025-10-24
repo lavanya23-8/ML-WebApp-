@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-start min-vh-100" style="padding: 50px 0;">
+    <div class="card shadow-lg p-5" style="max-width: 800px; width: 95%; background: rgba(0,0,0,0.5); color: white; border-radius: 15px;">
+        
+        <h2 class="text-info mb-4 text-center" style="font-size: 2.5rem;">Prediction Results</h2>
+
+        <h4 class="mb-3 text-warning">User Inputs:</h4>
+        <div class="table-responsive mb-4">
+            <table class="table table-striped table-dark rounded">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key, value in inputs.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h4 class="mb-4 text-center p-3" style="color: #fff; background-color: {% if result == 'Diabetes Detected' %}#dc3545{% else %}#28a745{% endif %}; border-radius: 10px; font-size: 1.5rem;">
+            {{ result }}
+        </h4>
+
+        <div class="d-flex justify-content-center gap-3">
+            <!-- Make Another Prediction -->
+            <form action="/predict">
+                <button type="submit" class="btn btn-info btn-lg px-5 py-3" style="border-radius: 10px; font-weight: bold; transition: 0.3s;">
+                    Make Another Prediction
+                </button>
+            </form>
+
+            <!-- Back to Dashboard -->
+            <form action="/dashboard">
+                <button type="submit" class="btn btn-warning btn-lg px-5 py-3" style="border-radius: 10px; font-weight: bold; transition: 0.3s;">
+                    Back to Dashboard
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}  
+{% block content %}
+<section class="d-flex flex-column justify-content-center align-items-center text-center" 
+         style="min-height: 80vh; padding: 2rem; margin: 2rem auto; max-width: 800px;">
+
+    <h1 class="text-info mb-4" style="font-size: 2.5rem; font-weight: 700;">Welcome to ML App</h1>
+    
+    <p class="mb-5" style="font-size: 1.2rem; color: #ffffff; font-weight: bold; line-height: 1.6;">
+        Explore Machine Learning effortlessly: upload, train, and predict smarter in seconds.
+    </p>
+
+    <div class="d-flex gap-3">
+        <button onclick="location.href='/register'" 
+                class="btn btn-info btn-lg px-5 py-3" 
+                style="border-radius: 10px; font-weight: bold; transition: 0.3s;">
+            Get Started
+        </button>
+
+        <button onclick="location.href='/login'" 
+                class="btn btn-warning btn-lg px-5 py-3" 
+                style="border-radius: 10px; font-weight: bold; transition: 0.3s;">
+            Login
+        </button>
+    </div>
+</section>
+{% endblock %}

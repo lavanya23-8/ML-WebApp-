@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-start min-vh-100" style="padding-top: 50px; padding-bottom: 50px;">
+    <div class="card shadow-lg p-5 text-center" style="max-width: 700px; width: 95%; background: rgba(0,0,0,0.5); color: white; border-radius: 15px;">
+        
+        <h2 class="text-info mb-4" style="font-size: 2.5rem;">Diabetes Prediction</h2>
+        
+        <form method="POST" action="{{url_for('predict')}}">
+            
+            <div class="mb-3 text-start">
+                <label class="form-label">Pregnancies (0 to 20):</label>
+                <input type="number" name="Pregnancies" class="form-control rounded" min="0" max="20" placeholder="Number of Pregnancies" required>
+            </div>
+
+            <div class="mb-3 text-start">
+                <label class="form-label">Glucose Level (mg/dL: 0 to 200):</label>
+                <input type="number" name="Glucose" class="form-control rounded" min="0" max="200" placeholder="e.g., 120" required>
+            </div>
+
+            <div class="mb-3 text-start">
+                <label class="form-label">Blood Pressure (mm Hg: 40 to 180):</label>
+                <input type="number" name="Blood Pressure" class="form-control rounded" min="40" max="180" placeholder="e.g., 80" required>
+            </div>
+
+            <div class="mb-3 text-start">
+                <label class="form-label">Skin Thickness (mm: 0 to 100):</label>
+                <input type="number" name="Skin Thickness" class="form-control rounded" min="0" max="100" placeholder="e.g., 94" required>
+            </div>
+
+            <div class="mb-3 text-start">
+                <label class="form-label">Insulin Level (mu U/mL: 0 to 800):</label>
+                <input type="number" name="Insulin" class="form-control rounded" min="0" max="800" placeholder="e.g., 94" required>
+            </div>
+
+            <div class="mb-3 text-start">
+                <label class="form-label">BMI (0.0 to 70.0):</label>
+                <input type="number" step="0.1" name="BMI" class="form-control rounded" min="0" max="70" placeholder="e.g., 28.4" required>
+            </div>
+
+            <div class="mb-3 text-start">
+                <label class="form-label">Diabetes Pedigree Function (0.0 to 2.5):</label>
+                <input type="number" step="0.01" name="Diabetes Pedigree Function" class="form-control rounded" min="0" max="2.5" placeholder="e.g., 0.471" required>
+            </div>
+
+            <div class="mb-4 text-start">
+                <label class="form-label">Age (Years: 5 to 100):</label>
+                <input type="number" name="Age" class="form-control rounded" min="5" max="100" placeholder="e.g., 45" required>
+            </div>
+
+            <button type="submit" class="btn btn-info btn-lg px-5 py-3" style="border-radius: 10px; font-weight: bold; transition: 0.3s;">
+                Predict
+            </button>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
