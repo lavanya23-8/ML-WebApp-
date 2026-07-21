@@ -16,4 +16,4 @@ The app uses a trained ML model (built with Python) and a Flask web framework fo
 
 - Secure and lightweight deployment
 
-- Trained on the Pima Indians Diabetes Dataset...
+- Trained on the Pima Indians Diabetes Dataset..
