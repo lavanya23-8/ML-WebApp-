@@ -8,7 +8,7 @@ The app uses a trained ML model (built with Python) and a Flask web framework fo
 
 # Features
 
-- Predicts diabetes risk using ML algorithms.
+- Predicts diabetes risk using ML algorithms
 
 - User-friendly web interface built with HTML, CSS, and Flask.
 
