@@ -1,6 +1,6 @@
 # ML-WebApp-
 Diabetes Prediction Web Application
-# Overview.
+# Overview
 
 The Diabetes Prediction Web App is a machine learning–based web application that predicts whether a person is likely to have diabetes based on health-related parameters such as glucose level, BMI, age, blood pressure, and insulin level..
 
