@@ -4,7 +4,7 @@ Diabetes Prediction Web Application
 
 The Diabetes Prediction Web App is a machine learning–based web application that predicts whether a person is likely to have diabetes based on health-related parameters such as glucose level, BMI, age, blood pressure, and insulin level.
 
-The app uses a trained ML model (built with Python) and a Flask web framework for backend integration, providing an easy-to-use interface for real-time prediction.
+The app uses a trained ML model (built with Python) and a Flask web framework for backend integration, providing an easy-to-use interface for real-time prediction
 
 # Features
 
