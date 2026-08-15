@@ -12,7 +12,7 @@ The app uses a trained ML model (built with Python) and a Flask web framework fo
 
 - User-friendly web interface built with HTML, CSS, and Flask
 
-- Real-time result generation based on user inputs
+- Real-time result generation based on user inputs.
 
 - Secure and lightweight deployment
 
