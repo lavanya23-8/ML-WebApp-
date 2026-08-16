@@ -1,4 +1,4 @@
-# ML-WebApp-
+# ML-WebApp
 Diabetes Prediction Web Application
 # Overview
 
